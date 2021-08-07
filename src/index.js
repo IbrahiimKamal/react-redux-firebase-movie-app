@@ -1,12 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+import { Provider } from 'react-redux';
+import 'bootstrap/dist/css/bootstrap-grid.min.css';
+
+import store from './redux';
+import GlobalStyles from './styles/Global.styles';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Provider store={store}>
+      <GlobalStyles />
+      <App />
+    </Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );
